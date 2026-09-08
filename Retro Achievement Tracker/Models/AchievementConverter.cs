@@ -30,6 +30,7 @@ namespace Retro_Achievement_Tracker.Models
             JToken Points = item["Points"];
             JToken TrueRatio = item["TrueRatio"];
             JToken Date = item["Date"];
+            JToken DateEarnedSoftcore = item["DateEarned"];
             JToken DateEarned = item["DateEarnedHardcore"];
             JToken BadgeName = item["BadgeName"];
             JToken DisplayOrder = item["DisplayOrder"];
@@ -69,6 +70,10 @@ namespace Retro_Achievement_Tracker.Models
             if (DateEarned != null && !string.IsNullOrEmpty(DateEarned.ToString()))
             {
                 Achievement.DateEarned = DateTime.Parse(DateEarned.ToString());
+            }
+            else if(DateEarnedSoftcore != null && !string.IsNullOrEmpty(DateEarnedSoftcore.ToString()))
+            {
+                Achievement.DateEarned = DateTime.Parse(DateEarnedSoftcore.ToString());
             }
             if (BadgeName != null)
             {
